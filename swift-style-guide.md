@@ -35,6 +35,24 @@ This guide was last updated for Swift 4.0 on May 19, 2018.
 * **1.4** Avoid trailing whitespace anywhere (Xcode->Preferences->Text Editing->Automatically trim trailing whitespace + Including whitespace-only lines).
 * **1.5** Place opening braces on new lines
 
+**DON'T**
+```swift
+class SomeClass  {
+    func someMethod() {
+        if x == y {
+            /* ... */
+        }  else if x == z  {
+            /* ... */
+        }  else  {
+            /* ... */
+        }
+    }
+
+    /* ... */
+}
+```
+
+**DO**
 ```swift
 class SomeClass 
 {
@@ -43,10 +61,12 @@ class SomeClass
         if x == y
         {
             /* ... */
-        } else if x == z 
+        } 
+        else if x == z 
         {
             /* ... */
-        } else 
+        } 
+        else 
         {
             /* ... */
         }
@@ -63,13 +83,15 @@ class SomeClass
 let pirateViewController: PirateViewController
 
 // dictionary syntax (note that we left-align as opposed to aligning colons)
-let ninjaDictionary: [String: AnyObject] = [
+let ninjaDictionary: [String: AnyObject] = 
+[
     "fightLikeDairyFarmer": false,
     "disgusting": true
 ]
 
 // declaring a function
-func myFunction<T, U: SomeProtocol>(firstArgument: U, secondArgument: T) where T.RelatedType == U {
+func myFunction<T, U: SomeProtocol>(firstArgument: U, secondArgument: T) where T.RelatedType == U 
+{
     /* ... */
 }
 
@@ -77,12 +99,14 @@ func myFunction<T, U: SomeProtocol>(firstArgument: U, secondArgument: T) where T
 someFunction(someArgument: "Kitten")
 
 // superclasses
-class PirateViewController: UIViewController {
+class PirateViewController: UIViewController 
+{
     /* ... */
 }
 
 // protocols
-extension PirateViewController: UITableViewDataSource {
+extension PirateViewController: UITableViewDataSource 
+{
     /* ... */
 }
 ```
@@ -93,14 +117,19 @@ extension PirateViewController: UITableViewDataSource {
 let myArray = [1, 2, 3, 4, 5]
 ```
 
-* **1.8** There should be a space before and after a binary operator such as `+`, `==`, or `->`. There should also not be a space after a `(` and before a `)`.
+* **1.8** Use a space before and after a binary operator such as `+`, `==`, or `->`. 
+
+* **1.9** No spaces before or after a `(`or `)`.
 
 ```swift
 let myValue = 20 + (30 / 2) * 3
-if 1 + 1 == 3 {
+if 1 + 1 == 3 
+{
     fatalError("The universe is broken.")
 }
-func pancake(with syrup: Syrup) -> Pancake {
+
+func pancake(with syrup: Syrup) -> Pancake 
+{
     /* ... */
 }
 ```
